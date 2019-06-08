@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="39L-3q-Ayo">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="140" width="0.0" height="56"/>
                                 <color key="barTintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -140,7 +140,60 @@
                     <view key="view" contentMode="scaleToFill" id="5Go-Vb-83m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TYV-GN-tI8">
+                                <rect key="frame" x="0.0" y="140" width="414" height="583"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="077-i5-M4Y">
+                                <rect key="frame" x="168" y="731" width="78" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZQ-KT-Rx0">
+                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-LE-bL5">
+                                        <rect key="frame" x="0.0" y="20.5" width="78" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf6-Ur-VUO">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTl-FL-co8">
+                                                <rect key="frame" x="42" y="0.0" width="36" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-82-ytu">
+                                        <rect key="frame" x="0.0" y="41" width="62" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pf-ez-JEC">
+                                        <rect key="frame" x="0.0" y="61.5" width="32.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="077-i5-M4Y" firstAttribute="top" secondItem="TYV-GN-tI8" secondAttribute="bottom" constant="8" id="05q-sb-uZ4"/>
+                            <constraint firstItem="TYV-GN-tI8" firstAttribute="leading" secondItem="mzT-wT-9il" secondAttribute="leading" id="6fZ-aw-o9e"/>
+                            <constraint firstItem="TYV-GN-tI8" firstAttribute="top" secondItem="mzT-wT-9il" secondAttribute="top" id="iQo-ng-L7q"/>
+                            <constraint firstItem="TYV-GN-tI8" firstAttribute="trailing" secondItem="mzT-wT-9il" secondAttribute="trailing" id="kDt-hH-M40"/>
+                            <constraint firstItem="077-i5-M4Y" firstAttribute="centerX" secondItem="5Go-Vb-83m" secondAttribute="centerX" id="lwx-vI-qYj"/>
+                            <constraint firstItem="077-i5-M4Y" firstAttribute="bottom" secondItem="mzT-wT-9il" secondAttribute="bottom" id="nQN-Jg-6H7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mzT-wT-9il"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="ho3-kb-SWE">
@@ -149,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCf-3u-zda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864" y="777"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="776.78571428571422"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="IR7-AX-Uj2">
@@ -275,6 +328,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dlp-Yh-M8W"/>
+        <segue reference="kMD-OQ-D7i"/>
     </inferredMetricsTieBreakers>
 </document>
