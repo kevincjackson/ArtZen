@@ -10,6 +10,7 @@ import UIKit
 
 struct Artwork: Codable {
     
+    var identifier: Int
     var smallImageURL: URL
     var largeImageURL: URL?
     var artist: String

@@ -22,7 +22,8 @@ class ExplorationViewController: UICollectionViewController {
     
     // MARK: - Target-Actions
     @IBAction func browseButtonPressed(_ sender: UIBarButtonItem) {
-        
+        let randomInt = stateController.worldState.objectIds.randomElement()!
+        MetAPI.fetchObject(id: randomInt)
         
     }
     

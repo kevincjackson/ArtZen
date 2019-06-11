@@ -21,6 +21,7 @@
 		0ACB4F0B22AF80F300221FC5 /* WorldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0A22AF80F300221FC5 /* WorldState.swift */; };
 		0ACB4F0D22AF816500221FC5 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0C22AF816500221FC5 /* StateController.swift */; };
 		0ACB4F0F22AF845200221FC5 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0E22AF845200221FC5 /* StorageController.swift */; };
+		0ACB4F1122AF922900221FC5 /* MetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F1022AF922900221FC5 /* MetObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0ACB4F0A22AF80F300221FC5 /* WorldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldState.swift; sourceTree = "<group>"; };
 		0ACB4F0C22AF816500221FC5 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		0ACB4F0E22AF845200221FC5 /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		0ACB4F1022AF922900221FC5 /* MetObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 			children = (
 				0ACB4F0A22AF80F300221FC5 /* WorldState.swift */,
 				0A97EFE322AC6458009D7139 /* Artwork.swift */,
-				0A6885AC22A70F1A00C431FD /* MetAPI.swift */,
+				0ACB4F1022AF922900221FC5 /* MetObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0A187A0722A64962004EECAA /* AppDelegate.swift */,
+				0A6885AC22A70F1A00C431FD /* MetAPI.swift */,
 				0ACB4F0C22AF816500221FC5 /* StateController.swift */,
 				0ACB4F0E22AF845200221FC5 /* StorageController.swift */,
 			);
@@ -197,6 +200,7 @@
 			files = (
 				0A187A0822A64962004EECAA /* AppDelegate.swift in Sources */,
 				0ACB4F0D22AF816500221FC5 /* StateController.swift in Sources */,
+				0ACB4F1122AF922900221FC5 /* MetObject.swift in Sources */,
 				0A6885AD22A70F1A00C431FD /* MetAPI.swift in Sources */,
 				0A97EFE422AC6458009D7139 /* Artwork.swift in Sources */,
 				0AB0FC3522AB99650026526A /* SearchViewController.swift in Sources */,
