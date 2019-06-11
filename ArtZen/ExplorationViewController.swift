@@ -8,21 +8,33 @@
 
 import UIKit
 
-private let reuseIdentifier = "imageCell"
 
 class ExplorationViewController: UICollectionViewController {
     
+    var stateController: StateController!
+    private var artworks = [Artwork]()
+    private let REUSE_IDENTIFIER = "imageCell"
+
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - Target-Actions
+    @IBAction func browseButtonPressed(_ sender: UIBarButtonItem) {
+        
+        
+    }
+    
+    
+    // MARK: - Collection View Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return artworks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
         
         return cell
     }

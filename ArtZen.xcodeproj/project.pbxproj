@@ -12,10 +12,15 @@
 		0A187A0F22A64964004EECAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A187A0E22A64964004EECAA /* Assets.xcassets */; };
 		0A187A1222A64964004EECAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A187A1022A64964004EECAA /* LaunchScreen.storyboard */; };
 		0A6885AD22A70F1A00C431FD /* MetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6885AC22A70F1A00C431FD /* MetAPI.swift */; };
+		0A97EFE422AC6458009D7139 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97EFE322AC6458009D7139 /* Artwork.swift */; };
 		0AB0FC3322AB98D10026526A /* ExplorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3222AB98D10026526A /* ExplorationViewController.swift */; };
 		0AB0FC3522AB99650026526A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3422AB99650026526A /* SearchViewController.swift */; };
 		0AB0FC3722AB9A890026526A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3622AB9A890026526A /* FavoritesViewController.swift */; };
 		0AB0FC3922AB9ACF0026526A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3822AB9ACF0026526A /* DetailViewController.swift */; };
+		0ACB4F0922AF807D00221FC5 /* MetAllObjectIds.archive in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0822AF807D00221FC5 /* MetAllObjectIds.archive */; };
+		0ACB4F0B22AF80F300221FC5 /* WorldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0A22AF80F300221FC5 /* WorldState.swift */; };
+		0ACB4F0D22AF816500221FC5 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0C22AF816500221FC5 /* StateController.swift */; };
+		0ACB4F0F22AF845200221FC5 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB4F0E22AF845200221FC5 /* StorageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +31,15 @@
 		0A187A1122A64964004EECAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A187A1322A64964004EECAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6885AC22A70F1A00C431FD /* MetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAPI.swift; sourceTree = "<group>"; };
+		0A97EFE322AC6458009D7139 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		0AB0FC3222AB98D10026526A /* ExplorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorationViewController.swift; sourceTree = "<group>"; };
 		0AB0FC3422AB99650026526A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0AB0FC3622AB9A890026526A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		0AB0FC3822AB9ACF0026526A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0ACB4F0822AF807D00221FC5 /* MetAllObjectIds.archive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MetAllObjectIds.archive; sourceTree = "<group>"; };
+		0ACB4F0A22AF80F300221FC5 /* WorldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldState.swift; sourceTree = "<group>"; };
+		0ACB4F0C22AF816500221FC5 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		0ACB4F0E22AF845200221FC5 /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 				0A187A1E22A64B87004EECAA /* Model Controllers */,
 				0A187A0E22A64964004EECAA /* Assets.xcassets */,
 				0A187A1322A64964004EECAA /* Info.plist */,
+				0ACB4F0822AF807D00221FC5 /* MetAllObjectIds.archive */,
 			);
 			path = ArtZen;
 			sourceTree = "<group>";
@@ -95,6 +106,8 @@
 		0A187A1D22A64B6B004EECAA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0ACB4F0A22AF80F300221FC5 /* WorldState.swift */,
+				0A97EFE322AC6458009D7139 /* Artwork.swift */,
 				0A6885AC22A70F1A00C431FD /* MetAPI.swift */,
 			);
 			name = Models;
@@ -104,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				0A187A0722A64962004EECAA /* AppDelegate.swift */,
+				0ACB4F0C22AF816500221FC5 /* StateController.swift */,
+				0ACB4F0E22AF845200221FC5 /* StorageController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A187A1222A64964004EECAA /* LaunchScreen.storyboard in Resources */,
+				0ACB4F0922AF807D00221FC5 /* MetAllObjectIds.archive in Resources */,
 				0A187A0F22A64964004EECAA /* Assets.xcassets in Resources */,
 				0A187A0D22A64962004EECAA /* Main.storyboard in Resources */,
 			);
@@ -180,11 +196,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A187A0822A64962004EECAA /* AppDelegate.swift in Sources */,
+				0ACB4F0D22AF816500221FC5 /* StateController.swift in Sources */,
 				0A6885AD22A70F1A00C431FD /* MetAPI.swift in Sources */,
+				0A97EFE422AC6458009D7139 /* Artwork.swift in Sources */,
 				0AB0FC3522AB99650026526A /* SearchViewController.swift in Sources */,
+				0ACB4F0B22AF80F300221FC5 /* WorldState.swift in Sources */,
 				0AB0FC3922AB9ACF0026526A /* DetailViewController.swift in Sources */,
 				0AB0FC3722AB9A890026526A /* FavoritesViewController.swift in Sources */,
 				0AB0FC3322AB98D10026526A /* ExplorationViewController.swift in Sources */,
+				0ACB4F0F22AF845200221FC5 /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
