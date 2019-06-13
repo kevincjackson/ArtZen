@@ -76,7 +76,7 @@ class ExplorationViewController: UICollectionViewController {
             switch imageResult {
             case .success(let image):
                 DispatchQueue.main.async {
-                    cell.imageView.image = image
+                    cell.setImageView(image: image)
                 }
             case .failure(let error):
                 print("\(error)")

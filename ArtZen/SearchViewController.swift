@@ -8,9 +8,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "imageCell"
 
 class SearchViewController: UICollectionViewController {
+
+    private let REUSE_IDENTIFIER = "imageCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class SearchViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
    
         return cell
     }
