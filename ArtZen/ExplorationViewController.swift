@@ -33,7 +33,9 @@ class ExplorationViewController: UICollectionViewController {
     
     // MARK: - Target-Actions
     @IBAction func browseButtonPressed(_ sender: UIBarButtonItem) {
-        addRandom()
+        for _ in 0..<3 {
+            addRandom()
+        }
     }
     
     // MARK: - Helpers
