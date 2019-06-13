@@ -26,6 +26,7 @@ class ExplorationViewController: UICollectionViewController {
             let detailVC = segue.destination as! DetailViewController
             let index = collectionView.indexPathsForSelectedItems!.first!.row
             detailVC.artwork = artworks[index]
+            detailVC.stateController = stateController
         default:
             preconditionFailure("Unknown segue identifier.")
         }

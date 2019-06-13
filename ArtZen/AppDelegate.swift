@@ -17,10 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let tabVC = window?.rootViewController as! UITabBarController
+        
         let explorationNavVC = tabVC.viewControllers![0] as! UINavigationController
         let explorationVC = explorationNavVC.topViewController as! ExplorationViewController
         explorationVC.stateController = stateController
         
+        let favoritesNavVC = tabVC.viewControllers![2] as! UINavigationController
+        let favoritesVC = favoritesNavVC.topViewController as! FavoritesViewController
+        favoritesVC.stateController = stateController
+
         return true
     }
 }

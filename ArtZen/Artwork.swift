@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Artwork: Codable {
+struct Artwork: Codable, Equatable {
     
     var identifier: Int
     var smallImageURL: URL

@@ -106,15 +106,33 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="QWa-hP-EqH" customClass="ImageCell" customModule="ArtZen" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="Ial-jQ-ufe" customClass="ImageCell" customModule="ArtZen" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Tv-2c-mwD">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TmM-f9-ckh">
+                                            <rect key="frame" x="50" y="50" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4Tv-2c-mwD" secondAttribute="bottom" id="1C8-hC-WZw"/>
+                                    <constraint firstItem="4Tv-2c-mwD" firstAttribute="top" secondItem="Ial-jQ-ufe" secondAttribute="top" id="Cjc-ma-VKH"/>
+                                    <constraint firstItem="TmM-f9-ckh" firstAttribute="centerX" secondItem="Ial-jQ-ufe" secondAttribute="centerX" id="RK3-qK-x5T"/>
+                                    <constraint firstItem="TmM-f9-ckh" firstAttribute="centerY" secondItem="Ial-jQ-ufe" secondAttribute="centerY" id="VfG-yK-wZk"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Tv-2c-mwD" secondAttribute="trailing" id="Vnx-io-5W4"/>
+                                    <constraint firstItem="4Tv-2c-mwD" firstAttribute="leading" secondItem="Ial-jQ-ufe" secondAttribute="leading" id="lfi-lY-xEx"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="8PH-fo-1ho" kind="show" identifier="detailVCSegue" id="Ix1-ju-0SR"/>
+                                    <outlet property="imageView" destination="4Tv-2c-mwD" id="Yrt-M5-N3C"/>
+                                    <outlet property="spinner" destination="TmM-f9-ckh" id="DpZ-dq-u2B"/>
+                                    <segue destination="8PH-fo-1ho" kind="show" identifier="detailVCSegue" id="gcF-0s-s0q"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -194,11 +212,16 @@
                         <viewLayoutGuide key="safeArea" id="mzT-wT-9il"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail View" id="ho3-kb-SWE">
-                        <barButtonItem key="rightBarButtonItem" title="Add To Favorites" id="ea5-0h-srR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="ea5-0h-srR">
+                            <connections>
+                                <action selector="favoriteButtonPressed:" destination="8PH-fo-1ho" id="6fa-rO-qjY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="artistLabel" destination="5ZQ-KT-Rx0" id="O1I-Id-6Ml"/>
                         <outlet property="dimensionsLabel" destination="1pf-ez-JEC" id="gem-1H-wTQ"/>
+                        <outlet property="favoriteButton" destination="ea5-0h-srR" id="OJ8-AK-Hbm"/>
                         <outlet property="imageView" destination="TYV-GN-tI8" id="SBz-jU-9Hp"/>
                         <outlet property="mediumLabel" destination="Ga9-82-ytu" id="5z2-9m-Hwm"/>
                         <outlet property="titleAndDateLabel" destination="Kf6-Ur-VUO" id="YOV-KC-oNM"/>
@@ -211,7 +234,7 @@
         <!--Favorites-->
         <scene sceneID="06X-Ku-JHB">
             <objects>
-                <collectionViewController id="pfA-u7-u6I" sceneMemberID="viewController">
+                <collectionViewController id="pfA-u7-u6I" customClass="FavoritesViewController" customModule="ArtZen" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LZr-rF-ZZH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,15 +246,33 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="e1p-Zg-Lpv">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="HOy-j5-5nS" customClass="ImageCell" customModule="ArtZen" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-3S-4cC">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pm1-7a-90v">
+                                            <rect key="frame" x="50" y="50" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KKL-3S-4cC" secondAttribute="trailing" id="OOZ-KS-Dbb"/>
+                                    <constraint firstAttribute="bottom" secondItem="KKL-3S-4cC" secondAttribute="bottom" id="WoX-AO-qxW"/>
+                                    <constraint firstItem="Pm1-7a-90v" firstAttribute="centerX" secondItem="HOy-j5-5nS" secondAttribute="centerX" id="Z8U-T8-Gx7"/>
+                                    <constraint firstItem="Pm1-7a-90v" firstAttribute="centerY" secondItem="HOy-j5-5nS" secondAttribute="centerY" id="lNZ-it-cRG"/>
+                                    <constraint firstItem="KKL-3S-4cC" firstAttribute="leading" secondItem="HOy-j5-5nS" secondAttribute="leading" id="n9c-Hk-ul6"/>
+                                    <constraint firstItem="KKL-3S-4cC" firstAttribute="top" secondItem="HOy-j5-5nS" secondAttribute="top" id="rzJ-nw-em6"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="8PH-fo-1ho" kind="show" identifier="detailVCSegue" id="NKg-Ge-fgN"/>
+                                    <outlet property="imageView" destination="KKL-3S-4cC" id="oI5-W5-DEF"/>
+                                    <outlet property="spinner" destination="Pm1-7a-90v" id="XmU-uZ-fTS"/>
+                                    <segue destination="8PH-fo-1ho" kind="show" identifier="detailVCSegue" id="3wd-E7-3AX"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -305,6 +346,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YQe-r7-1Dg"/>
+        <segue reference="3wd-E7-3AX"/>
     </inferredMetricsTieBreakers>
 </document>

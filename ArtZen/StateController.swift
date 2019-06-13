@@ -15,4 +15,18 @@ class StateController {
     init() {
         self.worldState = StorageController().load()
     }
+    
+    func isFavorite(artwork: Artwork) -> Bool {
+        return worldState.favorites.contains(artwork)
+    }
+    
+    func addToFavorites(artwork: Artwork) {
+        worldState.favorites.append(artwork)
+    }
+    
+    func removeFromFavorites(artwork: Artwork) {
+        if let index = worldState.favorites.firstIndex(where: { $0.identifier == artwork.identifier }) {
+            worldState.favorites.remove(at: index)
+        }
+    }
 }

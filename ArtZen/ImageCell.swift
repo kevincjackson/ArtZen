@@ -13,7 +13,7 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    // Automate the spinner
+    // Automates spinner
     func setImageView(image: UIImage?) {
         if let image = image {
             spinner.stopAnimating()
@@ -25,14 +25,14 @@ class ImageCell: UICollectionViewCell {
         }
     }
     
-    // Automate the spinner
+    // Automates spinner
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setImageView(image: nil)
     }
     
-    // Automate the spinner
+    // Automates spinner
     override func prepareForReuse() {
         super.prepareForReuse()
         

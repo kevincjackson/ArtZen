@@ -11,7 +11,6 @@ import Foundation
 struct WorldState: Codable {
     
     var objectIds = [Int]()
-    var savedArtworks = [Artwork]()
-    
+    var favorites = [Artwork]()
     
 }
