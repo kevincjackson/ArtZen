@@ -5,22 +5,22 @@
 //  Created by Kevin Jackson on 6/4/19.
 //  Copyright © 2019 Kevin Jackson. All rights reserved.
 //
+// 
 
 import Foundation
 
-struct MetAPI {
+struct MetUrls {
     
-//    static func fetchObject(id: Int, handler: @escaping (ObjectResult) -> Void) {
-    static func fetchObject(id: Int) {
-        let url = EndPoint.object(id).url
-        print(url)
+    // MARK: - URLS
+    static func url(forObjectId id: Int) -> URL {
+        return EndPoint.object(id).url
     }
     
-    enum ObjectResult {
-        case success(MetObject)
-        case failure(String)
+    static func url(forSearchString searchString: String) -> URL {
+        return EndPoint.search(searchString).url
     }
     
+    // MARK: - Private
     private enum EndPoint {
         case object(Int)
         case search(String)

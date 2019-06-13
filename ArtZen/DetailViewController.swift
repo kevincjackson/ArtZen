@@ -10,4 +10,33 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet private var imageView: UIImageView!
+
+    @IBOutlet private var artistLabel: UILabel!
+    @IBOutlet private var titleAndDateLabel: UILabel!
+    @IBOutlet private var mediumLabel: UILabel!
+    @IBOutlet private var dimensionsLabel: UILabel!
+    
+    var artwork: Artwork!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = artwork.title
+        artistLabel.text = artwork.artist
+        titleAndDateLabel.text = artwork.title + ", " + artwork.dateString
+        mediumLabel.text = artwork.medium
+        dimensionsLabel.text = artwork.dimensions
+        
+        Fetcher().fetchImage(url: artwork.smallImageURL) { imageResult in
+            switch imageResult {
+            case .success(let image):
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.image = image
+                }
+            case .failure(let error):
+                print("\(error)")
+            }
+        }
+    }
 }

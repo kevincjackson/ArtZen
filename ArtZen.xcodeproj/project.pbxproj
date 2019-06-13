@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A00B65622B006170020920F /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A00B65522B006170020920F /* Fetcher.swift */; };
+		0A00B65822B00A1F0020920F /* MetObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A00B65722B00A1F0020920F /* MetObjects.swift */; };
 		0A187A0822A64962004EECAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A187A0722A64962004EECAA /* AppDelegate.swift */; };
 		0A187A0D22A64962004EECAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A187A0B22A64962004EECAA /* Main.storyboard */; };
 		0A187A0F22A64964004EECAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A187A0E22A64964004EECAA /* Assets.xcassets */; };
 		0A187A1222A64964004EECAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A187A1022A64964004EECAA /* LaunchScreen.storyboard */; };
-		0A6885AD22A70F1A00C431FD /* MetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6885AC22A70F1A00C431FD /* MetAPI.swift */; };
+		0A1F16B322B1A854005FDC81 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1F16B222B1A854005FDC81 /* ImageCell.swift */; };
+		0A6885AD22A70F1A00C431FD /* MetUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6885AC22A70F1A00C431FD /* MetUrls.swift */; };
 		0A97EFE422AC6458009D7139 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97EFE322AC6458009D7139 /* Artwork.swift */; };
 		0AB0FC3322AB98D10026526A /* ExplorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3222AB98D10026526A /* ExplorationViewController.swift */; };
 		0AB0FC3522AB99650026526A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB0FC3422AB99650026526A /* SearchViewController.swift */; };
@@ -25,13 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A00B65522B006170020920F /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		0A00B65722B00A1F0020920F /* MetObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetObjects.swift; sourceTree = "<group>"; };
 		0A187A0422A64962004EECAA /* ArtZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A187A0722A64962004EECAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A187A0C22A64962004EECAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A187A0E22A64964004EECAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A187A1122A64964004EECAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A187A1322A64964004EECAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A6885AC22A70F1A00C431FD /* MetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAPI.swift; sourceTree = "<group>"; };
+		0A1F16B222B1A854005FDC81 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		0A6885AC22A70F1A00C431FD /* MetUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetUrls.swift; sourceTree = "<group>"; };
 		0A97EFE322AC6458009D7139 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		0AB0FC3222AB98D10026526A /* ExplorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorationViewController.swift; sourceTree = "<group>"; };
 		0AB0FC3422AB99650026526A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A00B65922B028550020920F /* MetAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0A6885AC22A70F1A00C431FD /* MetUrls.swift */,
+				0ACB4F1022AF922900221FC5 /* MetObject.swift */,
+				0A00B65722B00A1F0020920F /* MetObjects.swift */,
+			);
+			name = MetAPI;
+			sourceTree = "<group>";
+		};
 		0A1879FB22A64962004EECAA = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 				0A187A1C22A64B40004EECAA /* View Controllers */,
 				0A187A1D22A64B6B004EECAA /* Models */,
 				0A187A1E22A64B87004EECAA /* Model Controllers */,
+				0A00B65922B028550020920F /* MetAPI */,
 				0A187A0E22A64964004EECAA /* Assets.xcassets */,
 				0A187A1322A64964004EECAA /* Info.plist */,
 				0ACB4F0822AF807D00221FC5 /* MetAllObjectIds.archive */,
@@ -89,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0A187A0B22A64962004EECAA /* Main.storyboard */,
+				0A1F16B222B1A854005FDC81 /* ImageCell.swift */,
 				0A187A1022A64964004EECAA /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -110,7 +128,6 @@
 			children = (
 				0ACB4F0A22AF80F300221FC5 /* WorldState.swift */,
 				0A97EFE322AC6458009D7139 /* Artwork.swift */,
-				0ACB4F1022AF922900221FC5 /* MetObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -119,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0A187A0722A64962004EECAA /* AppDelegate.swift */,
-				0A6885AC22A70F1A00C431FD /* MetAPI.swift */,
+				0A00B65522B006170020920F /* Fetcher.swift */,
 				0ACB4F0C22AF816500221FC5 /* StateController.swift */,
 				0ACB4F0E22AF845200221FC5 /* StorageController.swift */,
 			);
@@ -200,13 +217,16 @@
 			files = (
 				0A187A0822A64962004EECAA /* AppDelegate.swift in Sources */,
 				0ACB4F0D22AF816500221FC5 /* StateController.swift in Sources */,
+				0A00B65622B006170020920F /* Fetcher.swift in Sources */,
 				0ACB4F1122AF922900221FC5 /* MetObject.swift in Sources */,
-				0A6885AD22A70F1A00C431FD /* MetAPI.swift in Sources */,
+				0A6885AD22A70F1A00C431FD /* MetUrls.swift in Sources */,
+				0A1F16B322B1A854005FDC81 /* ImageCell.swift in Sources */,
 				0A97EFE422AC6458009D7139 /* Artwork.swift in Sources */,
 				0AB0FC3522AB99650026526A /* SearchViewController.swift in Sources */,
 				0ACB4F0B22AF80F300221FC5 /* WorldState.swift in Sources */,
 				0AB0FC3922AB9ACF0026526A /* DetailViewController.swift in Sources */,
 				0AB0FC3722AB9A890026526A /* FavoritesViewController.swift in Sources */,
+				0A00B65822B00A1F0020920F /* MetObjects.swift in Sources */,
 				0AB0FC3322AB98D10026526A /* ExplorationViewController.swift in Sources */,
 				0ACB4F0F22AF845200221FC5 /* StorageController.swift in Sources */,
 			);

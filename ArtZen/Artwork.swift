@@ -12,7 +12,7 @@ struct Artwork: Codable {
     
     var identifier: Int
     var smallImageURL: URL
-    var largeImageURL: URL?
+    var largeImageURL: URL
     var artist: String
     var title: String
     var dateString: String
