@@ -52,7 +52,6 @@ class ExplorationViewController: UICollectionViewController {
             case .failure(let err):
                 switch err {
                 case ArtworkError.notInPublicDomain:
-                    print("Not in public domain. Trying again.")
                     self?.addRandom()
                 default:
                     print("\(err)")
@@ -77,6 +76,9 @@ class ExplorationViewController: UICollectionViewController {
             switch imageResult {
             case .success(let image):
                 DispatchQueue.main.async {
+                    print(url)
+                    print(self.artworks[index].smallImageURL)
+                    print(url == self.artworks[index].smallImageURL)
                     cell.setImageView(image: image)
                 }
             case .failure(let error):
