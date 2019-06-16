@@ -17,7 +17,8 @@ struct MetUrls {
     }
     
     static func url(forSearchString searchString: String) -> URL {
-        return EndPoint.search(searchString).url
+        let encodedSearchString = searchString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        return EndPoint.search(encodedSearchString).url
     }
     
     // MARK: - Private
@@ -32,7 +33,7 @@ struct MetUrls {
             case .object(let id):
                 return URL(string: base + "/public/collection/v1/objects/" + String(id))!
             case .search(let searchString):
-                return URL(string: base + "/public/collection/v1/search/?q=" + searchString)!
+                return URL(string: base + "/public/collection/v1/search?q=" + searchString)!
             }
         }
     }

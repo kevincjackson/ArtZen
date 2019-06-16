@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let explorationVC = explorationNavVC.topViewController as! ExplorationViewController
         explorationVC.stateController = stateController
         
+        let searchNavVC = tabVC.viewControllers![1] as! UINavigationController
+        let searchVC = searchNavVC.topViewController as! SearchViewController
+        searchVC.stateController = stateController
+        
         let favoritesNavVC = tabVC.viewControllers![2] as! UINavigationController
         let favoritesVC = favoritesNavVC.topViewController as! FavoritesViewController
         favoritesVC.stateController = stateController

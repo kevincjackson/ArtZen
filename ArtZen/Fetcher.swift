@@ -55,6 +55,30 @@ struct Fetcher {
         }
         task.resume()
     }
+    
+    func fetchObjectIds(forSearchString searchString: String, completionHandler: @escaping (ObjectIdsResults) -> Void) {
+        
+        let url = URLRequest(url: MetUrls.url(forSearchString: searchString))
+        let task = Fetcher.session.dataTask(with: url) { (data, response, error) in
+            
+            if let json = data {
+                do {
+                    let metObjects = try JSONDecoder().decode(
+                        MetObjects.self,
+                        from: json)
+                    let objectIdsResults = metObjects.toObjectIdsResults()
+                    completionHandler(objectIdsResults)
+                }
+                catch {
+                    completionHandler(.failure(ObjectIdsError.JSONError))
+                }
+            }
+            else {
+                completionHandler(.failure(ObjectIdsError.retrievalError))
+            }
+        }
+        task.resume()
+    }
 }
 
 enum ArtworkResult {
@@ -77,4 +101,16 @@ enum ImageResult {
 
 enum ImageError: Error {
     case creationError
+}
+
+enum ObjectIdsResults {
+    case success([Int])
+    case failure(Error)
+}
+
+enum ObjectIdsError: Error {
+    case JSONError
+    case missingTotal
+    case missingObjectIds
+    case retrievalError
 }

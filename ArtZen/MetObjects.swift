@@ -13,6 +13,25 @@ struct MetObjects: Codable {
     var total: Int?
     var objectIDs: [Int]?
 
+    func toObjectIdsResults() -> ObjectIdsResults {
+        if let total = total {
+            if total == 0 {
+                return .success([])
+            }
+            else {
+                if let objectIds = objectIDs {
+                    return .success(objectIds)
+                }
+                else {
+                   return .failure(ObjectIdsError.missingObjectIds)
+                }
+            }
+        }
+        else {
+            return .failure(ObjectIdsError.missingTotal)
+        }
+    }
+    
 }
 
 

@@ -292,13 +292,43 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-qW-WVU">
                                 <rect key="frame" x="0.0" y="232" width="414" height="581"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bY4-81-D3u">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="0.0" id="bY4-81-D3u">
+                                    <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="eXl-tW-Ywd" customClass="ImageCell" customModule="ArtZen" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPy-zp-5gg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-9L-AhL">
+                                                    <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="RPy-zp-5gg" secondAttribute="trailing" id="4GP-Kd-Sqw"/>
+                                            <constraint firstItem="KNh-9L-AhL" firstAttribute="centerY" secondItem="eXl-tW-Ywd" secondAttribute="centerY" id="7IB-UZ-9Hs"/>
+                                            <constraint firstAttribute="bottom" secondItem="RPy-zp-5gg" secondAttribute="bottom" id="7Vn-fO-0wa"/>
+                                            <constraint firstItem="RPy-zp-5gg" firstAttribute="top" secondItem="eXl-tW-Ywd" secondAttribute="top" id="WVw-zi-hpG"/>
+                                            <constraint firstItem="KNh-9L-AhL" firstAttribute="centerX" secondItem="eXl-tW-Ywd" secondAttribute="centerX" id="YHU-uD-uIv"/>
+                                            <constraint firstItem="RPy-zp-5gg" firstAttribute="leading" secondItem="eXl-tW-Ywd" secondAttribute="leading" id="lIv-xw-t90"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="RPy-zp-5gg" id="7Y8-Qh-8bh"/>
+                                            <outlet property="spinner" destination="KNh-9L-AhL" id="o4a-Yk-elg"/>
+                                            <segue destination="8PH-fo-1ho" kind="show" identifier="detailVCSegue" id="Oev-K6-YJf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="foE-O4-Ojb" id="WCx-Wa-7Ct"/>
                                     <outlet property="delegate" destination="foE-O4-Ojb" id="GrN-Xc-lWF"/>
@@ -320,7 +350,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yp3-Wj-VMw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="e01-JH-0uB"/>
+                    <navigationItem key="navigationItem" title="Search" id="e01-JH-0uB">
+                        <barButtonItem key="rightBarButtonItem" title="⇩" id="4hS-cz-pbE">
+                            <connections>
+                                <action selector="downloadButtonPressed:" destination="foE-O4-Ojb" id="Pk4-g7-SMC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="QpQ-qW-WVU" id="wL3-VB-rdu"/>
                         <outlet property="searchBar" destination="Sxp-Z7-PXd" id="u3Q-ad-m4t"/>
@@ -351,6 +387,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YQe-r7-1Dg"/>
+        <segue reference="3wd-E7-3AX"/>
     </inferredMetricsTieBreakers>
 </document>
