@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCf-3u-zda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3656.521739130435" y="776.78571428571422"/>
+            <point key="canvasLocation" x="3562" y="777"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="06X-Ku-JHB">
@@ -271,20 +271,25 @@
                                 <color key="barTintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCG-Dn-Mql">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCG-Dn-Mql" userLabel="Status Bar">
                                 <rect key="frame" x="0.0" y="196" width="414" height="36"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-Ur-g3C">
-                                        <rect key="frame" x="12" y="8" width="390" height="20.5"/>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WVX-qt-Fca">
+                                        <rect key="frame" x="197" y="8" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-Ur-g3C" userLabel="Status Label">
+                                        <rect key="frame" x="12" y="7.5" width="390" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="WVX-qt-Fca" firstAttribute="centerY" secondItem="GCG-Dn-Mql" secondAttribute="centerY" id="GBR-ma-Ajg"/>
                                     <constraint firstItem="gLM-Ur-g3C" firstAttribute="leading" secondItem="GCG-Dn-Mql" secondAttribute="leading" constant="12" id="Gw8-kc-whV"/>
                                     <constraint firstAttribute="trailing" secondItem="gLM-Ur-g3C" secondAttribute="trailing" constant="12" id="W7J-J2-4oO"/>
+                                    <constraint firstItem="WVX-qt-Fca" firstAttribute="centerX" secondItem="GCG-Dn-Mql" secondAttribute="centerX" id="gc2-yZ-ulJ"/>
                                     <constraint firstItem="gLM-Ur-g3C" firstAttribute="centerY" secondItem="GCG-Dn-Mql" secondAttribute="centerY" id="k06-2x-fxr"/>
                                     <constraint firstAttribute="height" constant="36" id="yAe-1d-Ysd"/>
                                 </constraints>
@@ -307,10 +312,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPy-zp-5gg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-9L-AhL">
-                                                    <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                                    <rect key="frame" x="50" y="50" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
@@ -336,6 +341,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Sxp-Z7-PXd" firstAttribute="top" secondItem="yp3-Wj-VMw" secondAttribute="top" id="16r-vc-aYe"/>
                             <constraint firstItem="QpQ-qW-WVU" firstAttribute="bottom" secondItem="yp3-Wj-VMw" secondAttribute="bottom" id="1Py-5I-eBR"/>
@@ -349,9 +355,12 @@
                             <constraint firstItem="GCG-Dn-Mql" firstAttribute="leading" secondItem="yp3-Wj-VMw" secondAttribute="leading" id="t3F-Eh-0Fo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yp3-Wj-VMw"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qHn-2h-iHs" appends="YES" id="4gn-Px-nyy"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="e01-JH-0uB">
-                        <barButtonItem key="rightBarButtonItem" title="⇩" id="4hS-cz-pbE">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="⇩" id="4hS-cz-pbE">
                             <connections>
                                 <action selector="downloadButtonPressed:" destination="foE-O4-Ojb" id="Pk4-g7-SMC"/>
                             </connections>
@@ -359,10 +368,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="QpQ-qW-WVU" id="wL3-VB-rdu"/>
+                        <outlet property="downloadButton" destination="4hS-cz-pbE" id="cPg-6a-d8H"/>
                         <outlet property="searchBar" destination="Sxp-Z7-PXd" id="u3Q-ad-m4t"/>
+                        <outlet property="statusLabel" destination="gLM-Ur-g3C" id="RfM-yt-ADS"/>
+                        <outlet property="statusSpinner" destination="WVX-qt-Fca" id="xi2-Zm-fQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3i-3Q-lCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qHn-2h-iHs">
+                    <connections>
+                        <action selector="viewPressed:" destination="foE-O4-Ojb" id="2Pf-dU-aiq"/>
+                        <outlet property="delegate" destination="foE-O4-Ojb" id="g0L-nv-GI6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1900.0000000000002" y="772.76785714285711"/>
         </scene>
@@ -387,6 +405,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3wd-E7-3AX"/>
+        <segue reference="Oev-K6-YJf"/>
     </inferredMetricsTieBreakers>
 </document>
