@@ -37,6 +37,7 @@ class SearchViewController: UIViewController   {
                 self?.statusSpinner.stopAnimating()
                 self?.statusLabel.text = instructions
                 self?.statusLabel.isHidden = false
+                self?.downloadButton.isEnabled = false
             case .showSpinning:
                 self?.statusSpinner.startAnimating()
                 self?.statusLabel.isHidden = true
@@ -48,6 +49,7 @@ class SearchViewController: UIViewController   {
                 self?.statusSpinner.stopAnimating()
                 self?.statusLabel.text = noResultsString
                 self?.statusLabel.isHidden = false
+                self?.downloadButton.isEnabled = false
             }
         }
     }
